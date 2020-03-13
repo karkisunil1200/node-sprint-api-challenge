@@ -7,6 +7,8 @@ server.get('/', (req, res) => {
   res.send(`<h2>Welcome to your Homepage</h2>`);
 });
 
+server.use(express.json());
+
 server.use('/api', apiRouter);
 
 const port = 5000;
