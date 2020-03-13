@@ -42,4 +42,29 @@ router.post('/', (req, res) => {
     });
 });
 
+router.put('/:id', (req, res) => {
+  const {id} = req.params;
+  const data = req.body;
+
+  Hubs.update(id, data)
+    .then(hubs => {
+      res.status(200).json(hubs);
+    })
+    .catch(error => {
+      res.status(500).json({message: 'Data could not be changed', message: error.message});
+    });
+});
+
+router.delete('/:id', (req, res) => {
+  const {id} = req.params;
+
+  Hubs.remove(id)
+    .then(hubs => {
+      res.status(200).json(hubs);
+    })
+    .catch(error => {
+      res.status(500).json({message: 'Data could not be deleted', message: error.message});
+    });
+});
+
 module.exports = router;
