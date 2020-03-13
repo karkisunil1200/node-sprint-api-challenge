@@ -29,6 +29,6 @@
   },
   "devDependencies": {
     "knex-cleaner": "^1.3.0",
-    "nodeman": "^1.1.2"
+    "nodemon": "^2.0.2"
   }
 }
